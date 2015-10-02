@@ -75,8 +75,17 @@ td time {
 
 .log .message {
   padding: 1em;
-  background: #fff;
-  margin-bottom: 1em;
+  background: #ebffce;
+  margin: 0 2em 1em 0;
+}
+.log .message.me {
+  margin: 0 0 1em 2em;
+  background: #ceceff;
+}
+.log .message.system {
+  margin: 0 0 1em;
+  background: #ddd;
+  font-style: italic;
 }
 .message h3 {
   font-size: 100%;
