@@ -29,6 +29,10 @@ a {
   font-size: 150%;
 }
 
+.topbar nav a {
+  margin-left: 1em;
+}
+
 .travellers {
   margin-bottom: 2em;
 }
