@@ -15,7 +15,7 @@ block content
               th Position
               th Passport Nr
               th Allergies
-              th.actions Actions
+              th.actions
           each user,id in users
             tr
               td= user.name
@@ -28,5 +28,4 @@ block content
                   a(href='#' class="btn btn-default") Edit
 
     .sidebar.col-xs-12.col-sm-4.col-md-4.col-lg-4
-        h2 Log
         include log.jade

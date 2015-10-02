@@ -33,6 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Add log message to data on every page!
 app.use(function(req, res, next) {
     res.locals.logMessages = store.db.logMessages;
+    res.locals.currentName = req.cookies.name;
     next();
 });
 

@@ -12,7 +12,7 @@ block content
                         th Title
                         th Time
                         th Description
-                        th.actions Actions
+                        th.actions
                 each event in events
                     tr
                         td= event.title
@@ -22,5 +22,4 @@ block content
                         td.actions
                             a(href='#' class="btn btn-default") Edit
         .sidebar.col-xs-12.col-sm-4.col-md-4.col-lg-4
-          h2 Log
           include log.jade

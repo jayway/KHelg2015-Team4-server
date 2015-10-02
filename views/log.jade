@@ -1,3 +1,4 @@
+h2 Feed
 form(action="/log/newLogMessage" method="post")
   .form-group
     ul.log
@@ -11,7 +12,7 @@ form(action="/log/newLogMessage" method="post")
             span.content= logMessage.message
     .add-log-message
       div.form-group
-        input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn")
+        input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn", value=currentName)
       div.form-group
         input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
       p
