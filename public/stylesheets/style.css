@@ -1,7 +1,6 @@
 body {
   padding: 50px;
   background-color: #ffffff;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -12,12 +11,13 @@ a {
   display: flex;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
+  margin-top: 20px;
   align-items: center;
 }
 
-.logo {
+.logo img {
   margin-right: 20px;
-  height: 50px;
+  height: 36px;
 }
 
 .topbar nav {
