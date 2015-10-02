@@ -6,8 +6,9 @@ block content
     h2 Resenärer
 
     ul
-        each user in users
+        each user, id in users
             li= user.name
+            a(href='users/edit/#{id}' class="btn btn-default") Editera
 
 
     p

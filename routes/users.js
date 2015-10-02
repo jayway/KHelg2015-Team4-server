@@ -25,6 +25,11 @@ router.post('/', function(req, res){
 
 });
 
+router.get('/edit/:id', function(req, res){
+  console.log('edit', req.params.id);
+  res.render('users-edit', { user: users[req.params.id] });
+});
+
 router.put('/:id', function(req, res){
     console.log('got position update', req.body);
     _.assign(users[req.params.id], req.body);
