@@ -8,8 +8,41 @@ a {
   color: #00B7FF;
 }
 
-#logo {
-  background-image: url(../images/travelway-logo-white.png);
-  width: 646px;
-  height: 268px;
+.topbar {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+  height: 50px;
+}
+
+.topbar nav {
+  flex: 1 1;
+  display: flex;
+  padding: 20px;
+  margin-left: 20px;
+  justify-content: flex-end;
+  font-size: 150%;
+}
+
+.travellers {
+  margin-bottom: 2em;
+}
+
+.add-traveller {
+  font-size: 400%;
+}
+
+.header {
+  display: flex;
+}
+.header h2 {
+  flex: 1 1;
+}
+.actions {
+  width: 1%;
 }

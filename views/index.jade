@@ -1,20 +1,19 @@
 extends layout
 
 block content
-  div#logo
+  .row
+    .travellers.col-xs-12.col-sm-8.col-md-8.col-lg-8
+        h2
 
-  h2 Lägg till resande
+        form(action="users" method="post")
+          div.form-group
+            label(for="inputName") Namn
+            input(type="text" name="name" class="form-control" id="inputName" placeholder="Kurt")
+
+          div.form-group
+            label(for="inputEmail") E-post
+            input(type="email" name="email" class="form-control" id="inputEmail" placeholder="kurt@gmail.com")
+          button(type="submit" class="btn btn-primary") Skicka
+    .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
 
 
-  form(action="users" method="post")
-    div.form-group
-      label(for="inputName") Namn
-      input(type="text" name="name" class="form-control" id="inputName" placeholder="Kurt")
-
-    div.form-group
-      label(for="inputEmail") E-post
-      input(type="email" name="email" class="form-control" id="inputEmail" placeholder="kurt@gmail.com")
-    button(type="submit" class="btn btn-primary") Skicka
-
-  p
-    a(href="/users") Lista alla resenärer

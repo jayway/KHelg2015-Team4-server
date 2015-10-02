@@ -1,15 +1,23 @@
 extends layout
 
 block content
-    div#logo
+  .row
+    .travellers.col-xs-12.col-sm-8.col-md-8.col-lg-8
+        .header
+            h2 Resenärer
+            a.add-traveller(href="/")
+                span.glyphicon.glyphicon-plus
 
-    h2 Resenärer
+        table.table.travellers
+          thead
+            tr
+              th Name
+              th.actions Actions
+          each user in users
+            tr
+              td= user.name
+              td.actions
+                  a(href='users/edit/#{id}' class="btn btn-default") Edit
 
-    ul
-        each user, id in users
-            li= user.name
-            a(href='users/edit/#{id}' class="btn btn-default") Editera
-
-
-    p
-        a(href="/") Lägg till resenär
+    .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
+        h2 Chat
