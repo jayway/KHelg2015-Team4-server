@@ -27,7 +27,15 @@ router.post('/', function(req, res){
 
 router.get('/edit/:id', function(req, res){
   console.log('edit', req.params.id);
-  res.render('users-edit', { user: users[req.params.id] });
+  res.render('users-edit', { user: _.assign({}, users[req.params.id], {id: req.params.id}) });
+});
+
+router.post('/edit/:id', function(req, res){
+  var id = req.params.id;
+  console.log('edit', id);
+  console.log('body', req.body);
+  _.assign(users[req.params.id], req.body);
+  res.redirect('/users');
 });
 
 router.put('/:id', function(req, res){

@@ -5,4 +5,14 @@ block content
 
     h2 Editera Resenärer #{user.name}
 
+    form(action="#{user.id}" method="post")
+        div.form-group
+            label(for="inputName") Namn
+            input(type="text" name="name" class="form-control" id="inputName" placeholder="Kurt" value="#{user.name}")
+
+        div.form-group
+            label(for="inputEmail") E-post
+            input(type="email" name="email" class="form-control" id="inputEmail" placeholder="kurt@gmail.com" value="#{user.email}")
+        button(type="submit" class="btn btn-primary") Skicka
+
     a(href="/users") Tillbaka
