@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var travellers = require('./routes/travellers');
 var events = require('./routes/events');
 var infos = require('./routes/infos');
+var log = require("./routes/log")
+var db = require('./store');
 
 var bodyParser = require('body-parser');
 var app = express();
@@ -28,12 +30,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Add log message to data on every page!
+app.use(function(req, res, next) {
+    res.locals.logMessages = db.logMessages;
+    next();
+});
+
 app.get('/', function (req, res) {
   res.redirect('/travellers');
 });
 app.use('/events', events);
 app.use('/travellers', travellers);
 app.use('/infos', infos);
+app.use('/log', log);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

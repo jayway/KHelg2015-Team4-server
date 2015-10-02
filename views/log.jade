@@ -1,0 +1,9 @@
+form(action="/log/newLogMessage" method="post")
+  div.form-group
+    ul
+      each logMessage in logMessages
+          li= logMessage.name + ": " + logMessage.message
+    input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn")
+    input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
+    p
+    button(type="submit" class="btn btn-primary") Skicka

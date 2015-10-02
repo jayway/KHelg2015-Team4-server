@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
-var currentUser = ""
 var store = require('../store');
 var db = store.db;
 var update = store.update;
@@ -14,7 +13,7 @@ router.get('/', function(req, res, next) {
     if (ct && ct == 'application/json') {
         res.send(db.users);
     } else {
-        res.render('travellers', { users: db.users, logMessages: db.logMessages, currentUser: currentUser });
+        res.render('travellers', { users: db.users});
     }
 
 });
@@ -47,18 +46,6 @@ router.put('/:id', function(req, res){
 
 router.get('/new', function(req, res) {
   res.render('add-new-traveller');
-});
-
-router.post('/newLogMessage', function(req, res){
-  console.log('got message', req.body);
-  var message = req.body.message || "";
-  var name = req.body.name || "okänd"
-
-  currentUser = name;
-
-  db.logMessages.push({"name": name, "message": message});
-  res.redirect('/travellers');
-
 });
 
 module.exports = router;
