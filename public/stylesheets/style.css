@@ -8,11 +8,9 @@ a {
 }
 
 .topbar {
-  display: flex;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
   margin-top: 20px;
-  align-items: center;
 }
 
 .logo img {
@@ -21,7 +19,6 @@ a {
 }
 
 .topbar nav {
-  flex: 1 1;
   display: flex;
   padding: 20px;
   margin-left: 20px;

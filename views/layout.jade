@@ -2,6 +2,7 @@ doctype html
 html
   head
     title= title
+     meta(name="viewport" content="width=device-width, initial-scale=1")
 
     link(rel='stylesheet', href='/stylesheets/bootstrap.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -12,11 +13,13 @@ html
   body
     a.logo(href="/")
       img(src="../images/logo-text.png")
-    .topbar
-      h1 KHelg
-      nav
-        a(href="/travellers") Travellers
-        a(href="/events") Events
-        a(href="/infos") Infos
+    .topbar.row
+      .col-xs-12.col-sm-2.col-md-2.col-lg-2
+        h1 KHelg
+      .col-xs-12.col-sm-10.col-md-10.col-lg-10
+        nav
+          a(href="/travellers") Travellers
+          a(href="/events") Events
+          a(href="/infos") Infos
 
     block content
