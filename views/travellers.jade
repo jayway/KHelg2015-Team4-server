@@ -13,6 +13,8 @@ block content
             tr
               th Name
               th Position
+              th Passnummer
+              th Allergier
               th.actions Actions
           each user,id in users
             tr
@@ -20,6 +22,8 @@ block content
               td
                 a(href='https://www.google.com/maps/?z=5&q=loc:' + user.latitude + ',' + user.longitude, target='_blank')
                   span= user.latitude + ', ' + user.longitude
+              td= user.passport
+              td= user.allergies
               td.actions
                   a(href='#' class="btn btn-default") Edit
 

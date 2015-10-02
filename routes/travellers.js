@@ -18,6 +18,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res){
   console.log('got user', req.body);
+  req.body.longitude = req.body.longitude || "";
+  req.body.latitude = req.body.latitude || "";
   db.users.push(req.body);
   //res.send('Added user: ' + JSON.stringify(req.body));
   res.redirect('/travellers');
