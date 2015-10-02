@@ -7,7 +7,7 @@ var travellers = require('./routes/travellers');
 var events = require('./routes/events');
 var infos = require('./routes/infos');
 var log = require("./routes/log")
-var db = require('./store');
+var store = require('./store');
 
 var bodyParser = require('body-parser');
 var app = express();
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add log message to data on every page!
 app.use(function(req, res, next) {
-    res.locals.logMessages = db.logMessages;
+    res.locals.logMessages = store.db.logMessages;
     next();
 });
 

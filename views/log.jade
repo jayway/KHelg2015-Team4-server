@@ -1,9 +1,18 @@
 form(action="/log/newLogMessage" method="post")
-  div.form-group
-    ul
+  .form-group
+    ul.log
       each logMessage in logMessages
-          li= logMessage.name + ": " + logMessage.message
-    input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn")
-    input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
-    p
-    button(type="submit" class="btn btn-primary") Skicka
+        if !logMessage.name
+          li.message.system
+            span.content= logMessage.message
+        else
+          li.message
+            h3.name= logMessage.name
+            span.content= logMessage.message
+    .add-log-message
+      div.form-group
+        input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn")
+      div.form-group
+        input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
+      p
+        button.btn.btn-block(type="submit" class="btn btn-primary") Skicka
