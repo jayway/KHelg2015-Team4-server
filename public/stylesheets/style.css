@@ -36,6 +36,13 @@ a {
 .add-traveller {
   font-size: 400%;
 }
+.events {
+    margin-bottom: 2em;
+}
+
+.add-event {
+    font-size: 400%;
+}
 
 .header {
   display: flex;

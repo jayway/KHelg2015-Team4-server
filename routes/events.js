@@ -32,6 +32,10 @@ router.put('/:id', function(req, res){
 
 });
 
+router.get('/new', function(req, res) {
+    res.render('add-new-event');
+});
+
 
 module.exports = router;
 

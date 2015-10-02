@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .row
+    .events.col-xs-12.col-sm-8.col-md-8.col-lg-8
+        h2
+
+        form(action="/events" method="post")
+          div.form-group
+            label(for="inputTitle") Titel
+            input(type="text" name="title" class="form-control" id="inputTitle" placeholder="Event titel")
+
+          div.form-group
+            label(for="inputDescription") Beskrivning
+            textarea(type="text" name="description" rows="10" cols="50" class="form-control" id="inputDescription" placeholder="Kort beskrivning.")
+
+
+          button(type="submit" class="btn btn-primary") Skicka
+    .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
+
+
