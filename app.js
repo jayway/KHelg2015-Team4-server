@@ -34,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
     res.locals.logMessages = store.db.logMessages;
     res.locals.currentName = req.cookies.name;
+    res.locals.title = "TravelWay"
     next();
 });
 
