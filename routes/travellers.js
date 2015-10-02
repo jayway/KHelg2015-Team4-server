@@ -21,8 +21,6 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res){
   console.log('got user', req.body);
-  req.body.longitude = req.body.longitude || "";
-  req.body.latitude = req.body.latitude || "";
   update(function(db) {
     db.users.push(req.body);
     return 'Ny resenär ' + req.body.name;
@@ -37,12 +35,12 @@ router.put('/:id', function(req, res){
     console.log('got position update', req.body);
     update(function(db) {
       var user = db.users[req.params.id];
+
       _.assign(user, req.body);
       db.users.push(req.body);
       return 'Uppdaterat position för resenär ' + user.name;
     });
 
-    console.log('got position update', db.users);
     res.send(200);
 
 });
