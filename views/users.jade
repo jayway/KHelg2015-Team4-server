@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    div#logo
+
+    h2 Resenärer
+
+    ul
+        each user in users
+            li= user.name

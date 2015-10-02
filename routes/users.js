@@ -5,7 +5,8 @@ var router = express.Router();
 var users = [];
 
 router.get('/', function(req, res, next) {
-  res.send('Has users ' + users.length);
+  //res.send('Has users ' + users.length);
+  res.render('users', { users: users });
 });
 
 router.post('/', function(req, res){
