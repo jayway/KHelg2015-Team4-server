@@ -15,7 +15,9 @@ block content
                 each info in infos
                     tr
                         td= info.title
-                        td= info.description
+                        td
+                          each row in info.description.split('\n')
+                            div= row
                         td.actions
                             a(href='infos/edit/#{id}' class="btn btn-default") Edit
         .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
