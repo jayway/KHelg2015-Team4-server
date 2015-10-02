@@ -1,8 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
-var db = require('../store');
 var currentUser = ""
+var store = require('../store');
+var db = store.db;
+var update = store.update;
+
+
 
 router.get('/', function(req, res, next) {
   //res.send('Has users ' + users.length);
@@ -19,7 +23,11 @@ router.post('/', function(req, res){
   console.log('got user', req.body);
   req.body.longitude = req.body.longitude || "";
   req.body.latitude = req.body.latitude || "";
-  db.users.push(req.body);
+  update(function(db) {
+    db.users.push(req.body);
+    return {title: 'ny resenär ' + req.body.name};
+  });
+
   //res.send('Added user: ' + JSON.stringify(req.body));
   res.redirect('/travellers');
 
@@ -27,7 +35,13 @@ router.post('/', function(req, res){
 
 router.put('/:id', function(req, res){
     console.log('got position update', req.body);
-    _.assign(db.users[req.params.id], req.body);
+    update(function(db) {
+      var user = db.users[req.params.id];
+      _.assign(user, req.body);
+      db.users.push(req.body);
+      return {title: 'Uppdaterat position för resenär ' + user.name};
+    });
+
     console.log('got position update', db.users);
     res.send(200);
 
@@ -50,3 +64,4 @@ router.post('/newLogMessage', function(req, res){
 });
 
 module.exports = router;
+

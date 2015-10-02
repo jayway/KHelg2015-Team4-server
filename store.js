@@ -7,4 +7,14 @@ var database = {
     logMessages: [{"name": "Nisse", message: "Snart dags att skriva in passnummmer."}],
     events: [{"title":"Going out for a beer","description":"Örenäs is know for it's famous pubs and local breweries. Let's go out and drink some beers.", from: "20:00", to: "23:00", participants:[{"name": "Mike", "id":"0"}]}]
 };
-module.exports = database;
+
+
+function update(callback) {
+  var msg = callback(database);
+  console.log('update: ', msg);
+  msg && database.logMessages.push(msg);
+}
+module.exports = {
+  update: update,
+  db: database
+}

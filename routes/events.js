@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
-var db = require('../store');
+var store = require('../store');
+var db = store.db;
+var update = store.update;
 
 
 router.get('/', function(req, res, next) {
@@ -17,7 +19,11 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res){
     console.log('create event', req.body);
-    db.events.push(req.body);
+    update(function(db) {
+        db.events.push(req.body);
+        return {title: 'Nytt event ' + req.body.title};
+    });
+
     res.redirect('/events');
 });
 
