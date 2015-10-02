@@ -15,6 +15,7 @@ block content
                 each event in events
                     tr
                         td= event.title
+                        td= event.description
                         td.actions
                             a(href='events/edit/#{id}' class="btn btn-default") Edit
         .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
