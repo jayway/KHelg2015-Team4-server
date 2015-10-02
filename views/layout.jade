@@ -8,8 +8,9 @@ html
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
   body
     .topbar
-      img.logo(src="../images/logo-text.png")
+      a(href="/")
+        img.logo(src="../images/logo-text.png")
       nav
-        a(href="/users") Travellers
+        a(href="/travellers") Travellers
 
     block content

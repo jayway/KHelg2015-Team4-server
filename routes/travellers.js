@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
     if (ct && ct == 'application/json') {
         res.send(users);
     } else {
-        res.render('users', { users: users });
+        res.render('travellers', { users: users });
     }
 
 });
@@ -21,13 +21,13 @@ router.post('/', function(req, res){
   console.log('got user', req.body);
   users.push(req.body);
   //res.send('Added user: ' + JSON.stringify(req.body));
-  res.redirect('/users');
+  res.redirect('/travellers');
 
 });
 
 router.get('/edit/:id', function(req, res){
   console.log('edit', req.params.id);
-  res.render('users-edit', { user: _.assign({}, users[req.params.id], {id: req.params.id}) });
+  res.render('edit-traveller', { user: _.assign({}, users[req.params.id], {id: req.params.id}) });
 });
 
 router.post('/edit/:id', function(req, res){
@@ -35,7 +35,7 @@ router.post('/edit/:id', function(req, res){
   console.log('edit', id);
   console.log('body', req.body);
   _.assign(users[req.params.id], req.body);
-  res.redirect('/users');
+  res.redirect('/travellers');
 });
 
 router.put('/:id', function(req, res){
@@ -45,6 +45,11 @@ router.put('/:id', function(req, res){
     res.send(200);
 
 });
+
+router.get('/new', function(req, res) {
+  res.render('add-new-traveller');
+});
+
 
 
 module.exports = router;
