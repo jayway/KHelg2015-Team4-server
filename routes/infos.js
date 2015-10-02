@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
-var db = require('../store');
+var store = require('../store');
+var update = store.update;
+var db = store.db;
 
 
 router.get('/', function(req, res, next) {
@@ -16,7 +18,11 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res){
     console.log('create info', req.body);
-    db.infos.push(req.body);
+    update(function(db) {
+        db.infos.push(req.body);
+        return 'Uppdaterat information ' + req.body.title;
+    });
+
     res.redirect('/infos');
 });
 
