@@ -4,7 +4,7 @@ block content
   .row
     .travellers.col-xs-12.col-sm-8.col-md-8.col-lg-8
         .header
-            h2 Resenärer
+            h2 Travellers
             a.add-traveller(href="/travellers/new")
                 span.glyphicon.glyphicon-plus
 
@@ -18,7 +18,7 @@ block content
             tr
               td= user.name
               td
-                a(href='https://www.google.com/maps/?z=12&q=loc:' + user.latitude + ',' + user.longitude, target='_blank')
+                a(href='https://www.google.com/maps/?z=5&q=loc:' + user.latitude + ',' + user.longitude, target='_blank')
                   span= user.latitude + ', ' + user.longitude
               td.actions
                   a(href='#' class="btn btn-default") Edit
