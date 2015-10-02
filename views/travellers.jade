@@ -12,10 +12,14 @@ block content
           thead
             tr
               th Name
+              th Position
               th.actions Actions
           each user,id in users
             tr
               td= user.name
+              td
+                a(href='https://www.google.com/maps/?z=12&q=loc:' + user.latitude + ',' + user.longitude, target='_blank')
+                  span= user.latitude + ', ' + user.longitude
               td.actions
                   a(href='#' class="btn btn-default") Edit
 
