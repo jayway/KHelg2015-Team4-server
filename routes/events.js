@@ -21,7 +21,7 @@ router.post('/', function(req, res){
     console.log('create event', req.body);
     update(function(db) {
         db.events.push(req.body);
-        return {title: 'Nytt event ' + req.body.title};
+        return 'Nytt event ' + req.body.title;
     });
 
     res.redirect('/events');
@@ -29,12 +29,17 @@ router.post('/', function(req, res){
 
 router.put('/:id', function(req, res){
     console.log('user joined event', req.body);
-    var currentEvent = db.events[req.params.id];
-    if (!currentEvent.participants) {
-        currentEvent.participants = [];
-    }
-    currentEvent.participants.push(req.body);
-    console.log('event', db.events[req.params.id]);
+
+    update(function(db) {
+        var currentEvent = db.events[req.params.id];
+        if (!currentEvent.participants) {
+            currentEvent.participants = [];
+        }
+        currentEvent.participants.push(req.body);
+        console.log('event', db.events[req.params.id]);
+        return 'Användare gick med i ' + req.body.title;
+    });
+
     res.send(200);
 
 });

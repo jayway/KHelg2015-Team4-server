@@ -12,7 +12,7 @@ var database = {
 function update(callback) {
   var msg = callback(database);
   console.log('update: ', msg);
-  msg && database.logMessages.push(msg);
+  msg && database.logMessages.push({name: 'Travelway', message: msg});
 }
 module.exports = {
   update: update,
