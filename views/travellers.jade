@@ -21,7 +21,7 @@ block content
               td= user.name
               td
                 a(href='https://www.google.com/maps/?z=5&q=loc:' + user.latitude + ',' + user.longitude, target='_blank')
-                  span= user.latitude + ', ' + user.longitude
+                  span= user.latitude ? user.latitude + ', ' + user.longitude : ''
               td= user.passport
               td= user.allergies
               td.actions
