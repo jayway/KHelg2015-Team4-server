@@ -2,8 +2,7 @@ var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
 var db = require('../store');
-
-
+var currentUser = ""
 
 router.get('/', function(req, res, next) {
   //res.send('Has users ' + users.length);
@@ -11,7 +10,7 @@ router.get('/', function(req, res, next) {
     if (ct && ct == 'application/json') {
         res.send(db.users);
     } else {
-        res.render('travellers', { users: db.users });
+        res.render('travellers', { users: db.users, logMessages: db.logMessages, currentUser: currentUser });
     }
 
 });
@@ -38,7 +37,16 @@ router.get('/new', function(req, res) {
   res.render('add-new-traveller');
 });
 
+router.post('/newLogMessage', function(req, res){
+  console.log('got message', req.body);
+  var message = req.body.message || "";
+  var name = req.body.name || "okänd"
 
+  currentUser = name;
+
+  db.logMessages.push({"name": name, "message": message});
+  res.redirect('/travellers');
+
+});
 
 module.exports = router;
-

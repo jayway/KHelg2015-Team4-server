@@ -29,3 +29,12 @@ block content
 
     .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
         h2 Chat
+        form(action="travellers/newLogMessage" method="post")
+          div.form-group
+            ul
+              each logMessage in logMessages
+                  li= logMessage.name + ": " + logMessage.message
+            input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn" value!= currentUser)
+            input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
+            p
+            button(type="submit" class="btn btn-primary") Skicka
