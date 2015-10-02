@@ -3,22 +3,17 @@ block content
     .row
         .infos.col-xs-12.col-sm-8.col-md-8.col-lg-8
             .header
-                h2 Infos
+                h2 Information
                 a.add-event(href="/infos/new")
                     span.glyphicon.glyphicon-plus
-            table.table.events
-                thead
-                    tr
-                        th Title
-                        th Description
-                        th.actions Actions
-                each info in infos
-                    tr
-                        td= info.title
-                        td
-                          each row in info.description.split('\n')
-                            div= row
-                        td.actions
-                            a(href='infos/edit/#{id}' class="btn btn-default") Edit
+            .info-entries
+              each info in infos
+                .info-entry
+                  h3= info.title
+                  .content
+                    each row in info.description.split('\n')
+                      div= row
+                  .actions
+                    a(href='#' class="btn btn-default") Edit
         .sidebar.col-xs-12.col-sm-4.col-md-4.col-lg-4
           include log.jade

@@ -51,7 +51,7 @@ a {
 .header h2 {
   flex: 1 1;
 }
-.actions {
+table .actions {
   width: 1%;
 }
 
@@ -91,4 +91,22 @@ td time {
 }
 .add-log-message {
   margin-top: 2em;
+}
+
+.info-entry {
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+
+.info-entry .content {
+  margin-bottom: 1em;
+}
+
+.info-entry .actions {
+  text-align: right;
+}
+.info-entry .actions a {
+  display: inline-block;
 }
