@@ -6,7 +6,13 @@ var users = [];
 
 router.get('/', function(req, res, next) {
   //res.send('Has users ' + users.length);
-  res.render('users', { users: users });
+    var ct = req.get('Accept');
+    if (ct && ct == 'application/json') {
+        res.send(users);
+    } else {
+        res.render('users', { users: users });
+    }
+
 });
 
 router.post('/', function(req, res){
