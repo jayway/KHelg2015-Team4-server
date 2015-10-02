@@ -1,8 +1,15 @@
 body {
   padding: 50px;
+  background-color: #ecf0f1;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+#logo {
+  background-image: url(../images/travelway-logo-white.png);
+  width: 646px;
+  height: 268px;
 }

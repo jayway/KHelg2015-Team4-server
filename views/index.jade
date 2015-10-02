@@ -1,5 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div#logo
+
+  h2 Lägg till resande
+
+
+  form
+    div.form-group
+      label(for="inputName") Name
+      input(type="text" class="form-control" id="inputName" placeholder="Name")
+
+    div.form-group
+      label(for="inputEmail") Email
+      input(type="email" class="form-control" id="inputEmail" placeholder="Email")
+    button(type="submit" class="btn btn-primary") Skicka
