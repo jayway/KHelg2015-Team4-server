@@ -25,19 +25,6 @@ router.post('/', function(req, res){
 
 });
 
-router.get('/edit/:id', function(req, res){
-  console.log('edit', req.params.id);
-  res.render('edit-traveller', { user: _.assign({}, users[req.params.id], {id: req.params.id}) });
-});
-
-router.post('/edit/:id', function(req, res){
-  var id = req.params.id;
-  console.log('edit', id);
-  console.log('body', req.body);
-  _.assign(users[req.params.id], req.body);
-  res.redirect('/travellers');
-});
-
 router.put('/:id', function(req, res){
     console.log('got position update', req.body);
     _.assign(users[req.params.id], req.body);
