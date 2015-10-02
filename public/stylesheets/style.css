@@ -92,3 +92,6 @@ td time {
   font-weight: bold;
   margin: 0 0 .5em 0;
 }
+.add-log-message {
+  margin-top: 2em;
+}

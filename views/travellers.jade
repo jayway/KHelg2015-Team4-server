@@ -40,7 +40,10 @@ block content
                   li.message
                     h3.name= logMessage.name
                     span.content= logMessage.message
-            input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn" value!= currentUser)
-            input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
-            p
-            button(type="submit" class="btn btn-primary") Skicka
+            .add-log-message
+              div.form-group
+                input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn" value!= currentUser)
+              div.form-group
+                input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
+              p
+                button.btn.btn-block(type="submit" class="btn btn-primary") Skicka
