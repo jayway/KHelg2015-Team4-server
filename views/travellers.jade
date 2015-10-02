@@ -27,13 +27,15 @@ block content
               td.actions
                   a(href='#' class="btn btn-default") Edit
 
-    .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
+    .sidebar.col-xs-12.col-sm-4.col-md-4.col-lg-4
         h2 Chat
         form(action="travellers/newLogMessage" method="post")
-          div.form-group
-            ul
+          .form-group
+            ul.log
               each logMessage in logMessages
-                  li= logMessage.name + ": " + logMessage.message
+                li.message
+                  h3.name= logMessage.name
+                  span.content= logMessage.message
             input(type="text" name="name" class="form-control" id="inputName" placeholder="Ditt namn" value!= currentUser)
             input(type="text" name="message" class="form-control" id="inputMessage" placeholder="Skriv någonting!")
             p

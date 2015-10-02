@@ -62,3 +62,24 @@ td time {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.sidebar {
+  background: #eee;
+}
+
+.log {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.log .message {
+  padding: 1em;
+  background: #fff;
+  margin-bottom: 1em;
+}
+.message h3 {
+  font-size: 100%;
+  font-weight: bold;
+  margin: 0 0 .5em 0;
+}
