@@ -9,14 +9,17 @@ block content
             table.table.events
                 thead
                     tr
-                        th Titel
-                        th Beskrivning
+                        th Title
+                        th Time
+                        th Description
                         th.actions Actions
                 each event in events
                     tr
                         td= event.title
+                        td
+                          time= event.from + ' - ' + event.to
                         td= event.description
                         td.actions
-                            a(href='events/edit/#{id}' class="btn btn-default") Edit
+                            a(href='#' class="btn btn-default") Edit
         .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
 

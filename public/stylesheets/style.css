@@ -57,3 +57,8 @@ a {
 .actions {
   width: 1%;
 }
+
+td time {
+  overflow: hidden;
+  white-space: nowrap;
+}

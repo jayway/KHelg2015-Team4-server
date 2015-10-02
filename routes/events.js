@@ -9,7 +9,8 @@ router.get('/', function(req, res, next) {
     if (ct && ct == 'application/json') {
         res.send(db.events);
     } else {
-        res.render('events', { events: db.events });
+        var sorted = _.sortBy(db.events, 'from');
+        res.render('events', { events: sorted });
     }
 
 });

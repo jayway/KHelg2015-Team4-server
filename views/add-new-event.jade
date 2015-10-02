@@ -7,15 +7,23 @@ block content
 
         form(action="/events" method="post")
           div.form-group
-            label(for="inputTitle") Titel
+            label(for="inputTitle") Title
             input(type="text" name="title" class="form-control" id="inputTitle" placeholder="Event titel")
 
+          div.form-group.row
+            .col-xs-6.col-sm-6.col-md-6.col-lg-6
+              label(for="inputTitle") From
+                input(type="time" name="from" class="form-control", value="12:00")
+            .col-xs-6.col-sm-6.col-md-6.col-lg-6
+              label(for="inputTitle") To
+                input(type="time" name="to" class="form-control", value="14:00")
+
           div.form-group
-            label(for="inputDescription") Beskrivning
-            textarea(type="text" name="description" rows="10" cols="50" class="form-control" id="inputDescription" placeholder="Kort beskrivning.")
+            label(for="inputDescription") Description
+            textarea(type="text" name="description" rows="10" cols="50" class="form-control" id="inputDescription" placeholder="Description...")
 
 
-          button(type="submit" class="btn btn-primary") Skicka
+          button(type="submit" class="btn btn-primary") Save
     .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
 
 
