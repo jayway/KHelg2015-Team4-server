@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var _ = require('lodash');
 
 /* GET users listing. */
 var users = [];
@@ -22,6 +23,15 @@ router.post('/', function(req, res){
   res.redirect('/users');
 
 });
+
+router.put('/:id', function(req, res){
+    console.log('got position update', req.body);
+    _.assign(users[req.params.id], req.body);
+    console.log('got position update', users);
+    res.send(200);
+
+});
+
 
 module.exports = router;
 
