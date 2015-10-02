@@ -1,35 +1,33 @@
 var express = require('express');
 var router = express.Router();
 var _ = require('lodash');
-
-/* GET events listing. */
-var events = [{"title":"Going out for a beer","description":"Örenäs is know for it's famous pubs and local breweries. Let's go out and drink some beers.", participants:[{"name": "Mike", "id":"0"}]}];
+var db = require('../store');
 
 
 router.get('/', function(req, res, next) {
     var ct = req.get('Accept');
     if (ct && ct == 'application/json') {
-        res.send(events);
+        res.send(db.events);
     } else {
-        res.render('events', { events: events });
+        res.render('events', { events: db.events });
     }
 
 });
 
 router.post('/', function(req, res){
     console.log('create event', req.body);
-    events.push(req.body);
+    db.events.push(req.body);
     res.redirect('/events');
 });
 
 router.put('/:id', function(req, res){
     console.log('user joined event', req.body);
-    var currentEvent = events[req.params.id];
+    var currentEvent = db.events[req.params.id];
     if (!currentEvent.participants) {
         currentEvent.participants = [];
     }
     currentEvent.participants.push(req.body);
-    console.log('event', events[req.params.id]);
+    console.log('event', db.events[req.params.id]);
     res.send(200);
 
 });
