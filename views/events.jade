@@ -1,0 +1,21 @@
+extends layout
+block content
+    .row
+        .events.col-xs-12.col-sm-8.col-md-8.col-lg-8
+            .header
+                h2 Events
+                a.add-event(href="/")
+                    span.glyphicon.glyphicon-plus
+            table.table.events
+                thead
+                    tr
+                        th Titel
+                        th Beskrivning
+                        th.actions Actions
+                each event in events
+                    tr
+                        td= event.title
+                        td.actions
+                            a(href='events/edit/#{id}' class="btn btn-default") Edit
+        .chat.col-xs-12.col-sm-4.col-md-4.col-lg-4
+
