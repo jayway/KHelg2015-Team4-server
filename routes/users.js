@@ -3,7 +3,8 @@ var router = express.Router();
 var _ = require('lodash');
 
 /* GET users listing. */
-var users = [];
+var users = [{"name":"Mike","email":"michael.kober@jayway.com","longitude": "12.784406","latitude": "55.941582"}, {"name":"Erik","email":"erik@jayway.com","longitude": "12.804137","latitude": "55.945024"}, {"name":"Andreas","email":"andreas@jayway.com","longitude": "12.770166","latitude": "55.960413"}];
+
 
 router.get('/', function(req, res, next) {
   //res.send('Has users ' + users.length);
