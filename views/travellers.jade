@@ -12,16 +12,12 @@ block content
           thead
             tr
               th Name
-              th Position
               th Passport Nr
               th Allergies
               th.actions
           each user,id in users
             tr
               td= user.name
-              td
-                a(href='https://www.google.com/maps/?z=5&q=loc:' + user.latitude + ',' + user.longitude, target='_blank')
-                  span= user.latitude ? user.latitude + ', ' + user.longitude : ''
               td= user.passport
               td= user.allergies
               td.actions
