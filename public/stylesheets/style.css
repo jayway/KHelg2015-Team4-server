@@ -16,7 +16,7 @@ a {
 }
 
 .topbar {
-  background: #eee;
+  background: #ecf0f1;
   padding: 0 2em;
 }
 
@@ -75,7 +75,7 @@ td time {
 }
 
 .sidebar {
-  background: #eee;
+  background: #ecf0f1;
 }
 .sidebar h2 {
   font-size: 150%;
@@ -99,7 +99,7 @@ td time {
 }
 .log .message.system {
   margin: 0 0 1em;
-  background: #ddd;
+  background: none;
   font-style: italic;
 }
 .message h3 {
