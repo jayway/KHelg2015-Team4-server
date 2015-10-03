@@ -33,8 +33,9 @@ html
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', rel='stylesheet')
     script(src='/main.js')
   body
-    a.logo(href="/")
-      img(src="../images/logo-text.png")
+    .branding
+      a.logo(href="/")
+        img(src="../images/travelway-logo-black.png")
     .topbar.row
       .col-xs-12.col-sm-2.col-md-2.col-lg-2
         h1 KHelg
@@ -44,4 +45,5 @@ html
           a(href="/events") Events
           a(href="/infos") Information
 
-    block content
+    .main
+      block content

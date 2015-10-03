@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   background-color: #ffffff;
 }
 
@@ -7,10 +6,25 @@ a {
   color: #00B7FF;
 }
 
+.main {
+  padding: 2em;
+}
+
+.branding {
+  background: #333;
+  padding: 0.75em;
+}
+
 .topbar {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
-  margin-top: 20px;
+  background: #eee;
+  padding: 0 2em;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 150%;
+  font-weight: bold;
+  line-height: 5rem;
 }
 
 .logo img {
@@ -20,10 +34,10 @@ a {
 
 .topbar nav {
   display: flex;
-  padding: 20px;
+  line-height: 5rem;
   margin-left: 20px;
   justify-content: flex-end;
-  font-size: 150%;
+  font-size: 125%;
 }
 
 .topbar nav a {
@@ -62,6 +76,10 @@ td time {
 
 .sidebar {
   background: #eee;
+}
+.sidebar h2 {
+  font-size: 150%;
+  font-weight: bold;
 }
 
 .log {
