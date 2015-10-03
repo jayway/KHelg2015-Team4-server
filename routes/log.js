@@ -10,8 +10,9 @@ router.get('/', function(req, res, next) {
 router.post('/newLogMessage', function(req, res){
   console.log('got message', req.body);
   var message = req.body.message || "";
-  var name = req.body.name || "Unknown"
+  var name = req.body.name || "Unknown";
 
+  res.cookie('lastSeenComment', store.db.logMessages.length);
   res.cookie('name', name);
 
   store.db.logMessages.push({"name": name, "message": message});

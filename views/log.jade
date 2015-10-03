@@ -1,4 +1,7 @@
 h2 Feed
+  if numberOfNewMessages > 0
+    span.number-of-new-messages= numberOfNewMessages
+  
 form(action="/log/newLogMessage" method="post")
   .form-group
     ul.log

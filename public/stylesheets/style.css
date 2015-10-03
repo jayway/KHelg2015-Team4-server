@@ -82,6 +82,16 @@ td time {
   font-weight: bold;
 }
 
+.number-of-new-messages {
+  display: inline-block;
+  float: right;
+  background: #e74c3c;
+  color: #fff;
+  width: 1.25em;
+  line-height: 1.25em;
+  text-align: center;
+  border-radius: 100%;
+}
 .log {
   list-style-type: none;
   padding: 0;

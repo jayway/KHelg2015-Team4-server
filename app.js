@@ -8,6 +8,7 @@ var events = require('./routes/events');
 var infos = require('./routes/infos');
 var log = require("./routes/log")
 var store = require('./store');
+var _ = require('lodash');
 
 var bodyParser = require('body-parser');
 var app = express();
@@ -26,9 +27,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Add log message to data on every page!
 app.use(function(req, res, next) {
-    res.locals.logMessages = store.db.logMessages;
     res.locals.currentName = req.cookies.name;
-    res.locals.title = "TravelWay"
+    res.locals.logMessages = store.db.logMessages;
+
+    var lastSeenComment = parseInt(req.cookies.lastSeenComment) || 0;
+    res.locals.numberOfNewMessages = _.reduce(store.db.logMessages, function (acc, m, i) {
+      if (i > lastSeenComment) {
+        return acc + 1;
+      } else {
+        return acc;
+      }
+    }, 0);
+
+    res.cookie('lastSeenComment', store.db.logMessages.length - 1);
+    res.locals.title = "TravelWay";
     next();
 });
 
